@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contato.css">
+    <title>Formulario responsivo com html e css</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">  
+
+            <div class="logo">
+
+                <p>Weather Vison</p>
+
+            </div>  
+
+            <div class="nav-list">
+                <div>
+                  
+                <ul>   
+                    <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
+                    <li class="nav-item"><a href="chuva.html" class="nav-link">Chuva</a></li>
+                    <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
+                </ul>
+               </div>
+            </div> 
+
+            <div class="login-button">
+
+                <button><a href="contato.html">Contato</a></button>
+
+            </div>
+
+            <div class="mobile-menu-icon">
+
+               <button onclick="menuShow()"><img class="icon" src="img/menu_icon-icons.com_69631.png" alt=""></button>
+
+            </div>
+
+        </nav>
+
+        <div class="mobile-menu">
+
+            <ul>   
+                <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
+                <li class="nav-item"><a href="chuva.html" class="nav-link">Chuva</a></li>
+                <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
+            </ul>
+
+            <div class="login-button">
+
+                <button><a href="contato.html">Contato</a></button>
+                
+            </div>
+          </header>
+
+        </body>
+   
+       <section id ="tudo">
+
+            <div class="img-lado">
+                <img src="img/fundoform.jpg" alt="" width="800px">
+            </div>
+           
+            <div class="form-box">
+                <form action="https://formsubmit.co/maria.campos@padolabs.com.br" method="POST" class="form">
+                <h2>Envie sua mensagem</h2>
+                <br>
+            
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="http://127.0.0.1:5500/obrigado.html">
+
+                <form action="#">
+                    <div class="input-group">
+                        <label for="em"> Nome</label>
+                        <input type="text" id="nome" placeholder="Digite o seu nome completo" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="em"> Email</label>
+                        <input type="email" id="email" placeholder="Digite o seu email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="mens"> Envie sua menagem </label>
+                        <input class="msg" name="message" placeholder="escreva aqui"></input>
+                    
+                    </div>
+
+                    <div class="input-group">
+                        <button>Enviar</button>
+                    </div>
+
+                </form>
+            </div>
+        </section>
+
+        <footer class="footer-content">
+            <div>
+                <h3>Weather<span>Vison</span></h3>
+             </div>    
+      
+            <div>
+                <ul class="sociais">
+                <li><img src="img/facebook-logo.png" alt="" class="fa fa-facebook" width="35px" height="35px"></li>
+                <li><img src="img/instagram-logo.png" alt="" class="fa fa-instagram" width="35px" height="35px"></li>
+                <li><img src="img/whatsapp-logo.png" alt="" class="fa fa-linkedin" width="35px" height="35px"></li>
+                </ul>
+            </div>
+          
+            <div class="footer-bottom">
+              <p>copyright &copy;2022</p>
+            </div>
+      
+          </footer>
+    <script src="script.js"></script>
+</html>
