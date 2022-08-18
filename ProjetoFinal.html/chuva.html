@@ -1,102 +1,105 @@
 <html>
-   <head>
-      <meta charset="utf-8">
-      <title>mqtt-temp/and/umi</title>
-      <link rel="stylesheet" href="chuva.css">
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
-      <script src="chuva.js" type="text/javascript"></script>
-   </head>  
-   <body>
-      <div class="fundo">                                                                                
-         <header>
-               <nav class="nav-bar">  
-       
-                   <div class="logo">
-       
-                       <h1>Weather Vison</h1>
-       
-                   </div>  
-       
-                   <div class="nav-list">
-                       <div>
-                         
-                       <ul>   
-                           <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-                           <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
-                           <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
-                           <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
-                           <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
-                       </ul>
-                      </div>
-                   </div> 
-       
-                   <div class="login-button">
-       
-                       <button><a href="contato.html">Contato</a></button>
-       
-                   </div>
-       
-                   <div class="mobile-menu-icon">
-       
-                      <button onclick="menuShow()"><img class="icon" src="img/menu_icon-icons.com_69631.png" alt=""></button>
-       
-                   </div>
-       
-               </nav>
-       
-               <div class="mobile-menu">
-       
-                   <ul>   
-                       <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
-                       <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
-                       <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
-                       <li class="nav-item"><a href="chuva.html" class="nav-link">Chuva</a></li>
-                       <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
-                   </ul>
-       
-                   <div class="login-button">
-       
-                       <button><a href="contato.html">Contato</a></button>
-                       
-                   </div>
-                 </header>
-               </div>
-               
-     </header>
-      <div class="wrapper">
-         <h1 style="color: black;">Chuva</h1>
-         <form id="connection-information-form">
-            <input type="button" onclick="startConnect()" class="btn um" value="Connect">
-        <input type="button" onclick="startDisconnect()" class="btn um" value="Disconnect">
-            <!-- <b>Hostname or IP Address:</b>  -->
-            <!-- <input id="host" type="text" name="host" value="test.mosquitto.org"><br> -->
-            <!-- <b>Port:</b> -->
-            <!-- <input id="port" type="text" name="port" value="8080"><br> -->
-            <!-- <b>Topic:</b> -->
-            <!-- <input id="topic" type="text" name="topic" value="#"><br><br> -->
-            <!-- <input class="btn um" type="button" onclick="startConnect()" value="Connect">
-            <input class="btn um" type="button" onclick="startDisconnect()" value="Disconnect"> -->
-         </form>
-         <div id="messages"></div>
-      </div>
-     <footer class="footer-content">
-        <div>
-          <h3>Weather<span>Vison</span></h3>
+
+<head>
+  <meta charset="utf-8">
+  <title>mqtt-temp/and/umi</title>
+  <link rel="stylesheet" href="chuva.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+  <script src="css/chuva.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="fundo">
+    <header>
+      <nav class="nav-bar">
+
+        <div class="logo">
+
+          <h1>Weather Vison</h1>
+
         </div>
-  
-        <div>
-            <ul class="sociais">
-              <li><img src="img/facebook-logo.png" alt="" class="fa fa-facebook" width="35px" height="35px"></li>
-              <li><img src="img/instagram-logo.png" alt="" class="fa fa-instagram" width="35px" height="35px"></li>
-              <li><img src="img/whatsapp-logo.png" alt="" class="fa fa-linkedin" width="35px" height="35px"></li>
+
+        <div class="nav-list">
+          <div>
+
+            <ul>
+              <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
+              <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
+              <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
             </ul>
-         </div>
-      
-        <div class="footer-bottom">
-          <p>copyright &copy;2022</p>
+          </div>
         </div>
-  
-      </footer>
-      <script src="script.js"></script>
-   </body>
+
+        <div class="login-button">
+
+          <button><a href="contato.html">Contato</a></button>
+
+        </div>
+
+        <div class="mobile-menu-icon">
+
+          <button onclick="menuShow()"><img class="icon" src="img/menu_icon-icons.com_69631.png" alt=""></button>
+
+        </div>
+
+      </nav>
+
+      <div class="mobile-menu">
+
+        <ul>
+          <li class="nav-item"><a href="home.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="home.html" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="temUmi.html" class="nav-link">Temperatura/Umidade</a></li>
+          <li class="nav-item"><a href="chuva.html" class="nav-link">Chuva</a></li>
+          <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
+        </ul>
+
+        <div class="login-button">
+
+          <button><a href="contato.html">Contato</a></button>
+
+        </div>
+    </header>
+  </div>
+
+  </header>
+  <div class="wrapper">
+    <h1 style="color: black;">Chuva</h1>
+    <form id="connection-information-form">
+      <input type="button" onclick="startConnect()" class="btn um" value="Connect">
+      <input type="button" onclick="startDisconnect()" class="btn um" value="Disconnect">
+      <!-- <b>Hostname or IP Address:</b>  -->
+      <!-- <input id="host" type="text" name="host" value="test.mosquitto.org"><br> -->
+      <!-- <b>Port:</b> -->
+      <!-- <input id="port" type="text" name="port" value="8080"><br> -->
+      <!-- <b>Topic:</b> -->
+      <!-- <input id="topic" type="text" name="topic" value="#"><br><br> -->
+      <!-- <input class="btn um" type="button" onclick="startConnect()" value="Connect">
+            <input class="btn um" type="button" onclick="startDisconnect()" value="Disconnect"> -->
+    </form>
+    <div id="messages"></div>
+  </div>
+  <footer class="footer-content">
+    <div>
+      <h3>Weather<span>Vison</span></h3>
+    </div>
+
+    <div>
+      <ul class="sociais">
+        <li><img src="img/facebook-logo.png" alt="" class="fa fa-facebook" width="35px" height="35px"></li>
+        <li><img src="img/instagram-logo.png" alt="" class="fa fa-instagram" width="35px" height="35px"></li>
+        <li><img src="img/whatsapp-logo.png" alt="" class="fa fa-linkedin" width="35px" height="35px"></li>
+      </ul>
+    </div>
+
+    <div class="footer-bottom">
+      <p>copyright &copy;2022</p>
+    </div>
+
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>

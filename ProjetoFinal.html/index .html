@@ -1,114 +1,117 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
-    <title>LED</title>
-    <style id="dinamicStyle"></style>
-  </head>
-  <body>
-    <div class="fundo">                                                                                
-        <header>
-              <nav class="nav-bar">  
-      
-                  <div class="logo">
-      
-                      <h1>Weather Vison</h1>
-      
-                  </div>  
-      
-                  <div class="nav-list">
-                      <div>
-                        
-                      <ul>   
-                          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                          <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
-                          <li class="nav-item"><a href="#" class="nav-link">Temperatura/Umidade</a></li>
-                          <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
-                          <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
-                      </ul>
-                     </div>
-                  </div> 
-      
-                  <div class="login-button">
-      
-                      <button><a href="contato.html">Contato</a></button>
-      
-                  </div>
-      
-                  <div class="mobile-menu-icon">
-      
-                     <button onclick="menuShow()"><img class="icon" src="img/menu_icon-icons.com_69631.png" alt=""></button>
-      
-                  </div>
-      
-              </nav>
-      
-              <div class="mobile-menu">
-      
-                  <ul>   
-                      <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-                      <li class="nav-item"><a href="sobre.css" class="nav-link">Sobre</a></li>
-                      <li class="nav-item"><a href="#" class="nav-link">Temperatura/Umidade</a></li>
-                      <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
-                      <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
-                  </ul>
-      
-                  <div class="login-button">
-      
-                      <button><a href="contato.html">Contato</a></button>
-                      
-                  </div>
-                </header>
-              </div>
-              
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.2/mqttws31.min.js" type="text/javascript"></script>
+  <title>LED</title>
+  <style id="dinamicStyle"></style>
+</head>
+
+<body>
+  <div class="fundo">
+    <header>
+      <nav class="nav-bar">
+
+        <div class="logo">
+
+          <h1>Weather Vison</h1>
+
+        </div>
+
+        <div class="nav-list">
+          <div>
+
+            <ul>
+              <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+              <li class="nav-item"><a href="sobre.html" class="nav-link">Sobre</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Temperatura/Umidade</a></li>
+              <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
+              <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="login-button">
+
+          <button><a href="contato.html">Contato</a></button>
+
+        </div>
+
+        <div class="mobile-menu-icon">
+
+          <button onclick="menuShow()"><img class="icon" src="img/menu_icon-icons.com_69631.png" alt=""></button>
+
+        </div>
+
+      </nav>
+
+      <div class="mobile-menu">
+
+        <ul>
+          <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="sobre.css" class="nav-link">Sobre</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Temperatura/Umidade</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Chuva</a></li>
+          <li class="nav-item"><a href="controle.html" class="nav-link">Controle</a></li>
+        </ul>
+
+        <div class="login-button">
+
+          <button><a href="contato.html">Contato</a></button>
+
+        </div>
     </header>
-    <main>
-      <div class="quadrado" style="background-color: rgba(255, 255, 255, 0.271);  ">
-      <div style="border-radius: 20px; width: auto;" >
+  </div>
+
+  </header>
+  <main>
+    <div class="quadrado" style="background-color: rgba(255, 255, 255, 0.271);  ">
+      <div style="border-radius: 20px; width: auto;">
         <h1 style="color: black;"><br>Escolha a ação desejada:</h1>
         <br>
         <input type="button" onclick="startConnect()" class="btn um" value="Connect">
         <input type="button" onclick="startDisconnect()" class="btn um" value="Disconnect">
         <div id="messages"></div>
         <br>
-        
+
         <!-- <input type="button" onclick="startConnect()" class="btn um" value="Connect">
         <input type="button" onclick="startDisconnect()" class="btn um" value="Disconnect">-->
-        <input type="button" onclick="myButtonWasClicked1()" class="btn third" value="Liga"> 
+        <input type="button" onclick="myButtonWasClicked1()" class="btn third" value="Liga">
         <input type="button" onclick="myButtonWasClicked2()" class="btn four" value="Desliga">
-       
-        
-       <!-- <h1><br>Cor do Led:</h1> -->
-        
+
+
+        <!-- <h1><br>Cor do Led:</h1> -->
+
         <!-- <button class="btn color">cor<br></button> -->
       </div>
-      
+
       </form>
-    </main>
-    <footer class="footer-content">
-      <div>
-        <h3>Weather<span>Vison</span></h3>
-     </div>
+  </main>
+  <footer class="footer-content">
+    <div>
+      <h3>Weather<span>Vison</span></h3>
+    </div>
 
-      <div>
-        <ul class="sociais">
-          <li><img src="img/facebook-logo.png" alt="" class="fa fa-facebook" width="35px" height="35px"></li>
-          <li><img src="img/instagram-logo.png" alt="" class="fa fa-instagram" width="35px" height="35px"></li>
-          <li><img src="img/whatsapp-logo.png" alt="" class="fa fa-linkedin" width="35px" height="35px"></li>
-        </ul>
-      </div>
-    
-      <div class="footer-bottom">
-        <p>copyright &copy;2022</p>
-      </div>
+    <div>
+      <ul class="sociais">
+        <li><img src="img/facebook-logo.png" alt="" class="fa fa-facebook" width="35px" height="35px"></li>
+        <li><img src="img/instagram-logo.png" alt="" class="fa fa-instagram" width="35px" height="35px"></li>
+        <li><img src="img/whatsapp-logo.png" alt="" class="fa fa-linkedin" width="35px" height="35px"></li>
+      </ul>
+    </div>
 
-    </footer>
-    <!-- <footer>
+    <div class="footer-bottom">
+      <p>copyright &copy;2022</p>
+    </div>
+
+  </footer>
+  <!-- <footer>
       Desenvolvido por Thiago Vinicius Gomes da Silva - Desenvolvedor Full Stack
     </footer> -->
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>
