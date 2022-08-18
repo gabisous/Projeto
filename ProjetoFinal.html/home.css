@@ -129,7 +129,7 @@ header {
     }
     .mobile-menu .nav-item {
         display: block;
-        padding-top: 1.2rem;  
+        padding-top: 2rem;  
     }
     .mobile-menu .login-button {
         display: block;
@@ -140,7 +140,7 @@ header {
     }
     .open {
         display: block;
-        height: 35vh;
+        height: 40vh;
     }
 }
 body{

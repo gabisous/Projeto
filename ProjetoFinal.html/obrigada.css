@@ -16,10 +16,7 @@ body {
     /* background-image: url(pexels-karolina-grabowska-4040851.jpg); */
 }
 
-header {
-    box-shadow: 0px 3px 10px;  width: auto;
-    height: auto;
-}
+
 
 .nav-bar {
     display: flex;

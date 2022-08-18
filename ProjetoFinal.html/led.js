@@ -56,7 +56,7 @@ function onConnect() {
 function onConnectionLost(responseObject) {
     document.getElementById("messages").innerHTML += '<span>ERROR: Connection lost</span><br/>';
     if (responseObject.errorCode !== 0) {
-        document.getElementById("messages").innerHTML += '<span>ERROR: ' + + responseObject.errorMessage + '</span><br/>';
+        document.getElementById("messages1").innerHTML += '<span>ERROR: ' + + responseObject.errorMessage + '</span><br/>';
     }
 }
 
@@ -72,7 +72,7 @@ function onMessageArrived(message) {
 // Chamado quando o botão de desconexão é pressionado
 function startDisconnect() {
     client.disconnect();
-    document.getElementById("messages").innerHTML += '<span>Disconnected</span><br/>';
+    document.getElementById("messages1").innerHTML += '<span>Disconnected</span><br/>';
     
 }
   // This is the function which handles button clicks
